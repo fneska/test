@@ -10,5 +10,8 @@ public class Main {
 		test.testFunction();
 		TestClass1 test1 = new TestClass1();
 		test1.testFunction();
+		
+		test1.testFunction();
+		test1.testFunction();
 	}
 }
