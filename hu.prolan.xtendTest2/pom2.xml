@@ -1,0 +1,252 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>hu.prolan.promod</groupId>
+	<artifactId>hu.prolan.promod.root</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho.version>1.1.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse-repo.url>http://download.eclipse.org/releases/neon/201705151400
+		</eclipse-repo.url>
+		<viatra-repo.url>http://download.eclipse.org/viatra/updates/release
+		</viatra-repo.url>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>eclipse-release</id>
+			<url>${eclipse-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>viatra-release</id>
+			<url>${viatra-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+
+		<repository>
+			<id>viatra</id>
+			<url>https://repo.eclipse.org/content/groups/viatra2/</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>viatra</id>
+			<url>https://repo.eclipse.org/content/groups/viatra/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>hu.prolan.javautil</groupId>
+			<artifactId>hu.prolan.javautil.docxwriter</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>hu.prolan.javautil</groupId>
+			<artifactId>hu.prolan.javautil.thirdparty.poi-ooxml</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>hu.prolan.javautil</groupId>
+			<artifactId>hu.prolan.javautil.base</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<!--dependency> <groupId>p2.eclipse-plugin</groupId> <artifactId>org.eclipse.viatra.query.runtime.rete</artifactId> 
+			<version>1.7.2.201803211255</version> </dependency -->
+
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>org.eclipse.xtend.lib</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.viatra</groupId>
+			<artifactId>viatra-query-runtime</artifactId>
+			<version>${viatra.version}</version>
+		</dependency>
+
+		<!-- requires many more dependencies - only use if required -->
+		<dependency>
+			<groupId>org.eclipse.viatra</groupId>
+			<artifactId>viatra-query-language</artifactId>
+			<version>${viatra.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<id>package-feature</id>
+						<configuration>
+							<finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}
+							</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>2.13.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/xtend-gen/main
+							</outputDirectory>
+							<testOutputDirectory>${project.build.directory}/xtend-gen/test
+							</testOutputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Using maven-clean-plugin to remove previously generated code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<filesets>
+								<fileset>
+									<!-- Generated code folder -->
+									<directory>src-gen</directory>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Setting up generator -->
+			<plugin>
+				<groupId>org.eclipse.viatra</groupId>
+				<artifactId>viatra-maven-plugin</artifactId>
+				<version>${viatra.version}</version>
+				<!-- Binding execution to the code generation lifecycle phase -->
+				<executions>
+					<execution>
+						<phase>default</phase>
+						<goals>
+							<goal>generate-sources</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- Output directory - required -->
+					<outputDirectory>src-gen</outputDirectory>
+					<metamodels>
+						<metamodel>
+							<!-- Select one of the following depending on where is your metamodel 
+								defined -->
+
+							<!-- (a) Java class for the EMF EPackage - use this if generated EMF 
+								code is in the classpath -->
+							<packageClass> hu.prolan.promod.model</packageClass>
+							<!-- (b) genmodel file used for generating the EMF model classes - 
+								use this if EMF model is in the same project -->
+							<!-- <genmodelUri>model/model.genmodel</genmodelUri> -->
+						</metamodel>
+					</metamodels>
+					<!-- Since 1.5, you can use the project dependencies instead of specific 
+						Maven dependencies - optional -->
+					<useProjectDependencies>true</useProjectDependencies>
+				</configuration>
+				<dependencies>
+					<!-- Dependency required for the cps domain project (that contains the 
+						generated EPackage), unless you set useProjectDependencies -->
+					<dependency>
+						<groupId> hu.prolan.promod.model</groupId>
+						<artifactId> hu.prolan.promod.model.model</artifactId>
+						<version>0.1.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>hu.prolan.memle.model</module>
+		<module>hu.prolan.promod.cli</module>
+		<module>hu.prolan.promod.dsl</module>
+		<module>hu.prolan.promod.generator</module>
+		<module>hu.prolan.promod.loader.emfuml2</module>
+		<module>hu.prolan.promod.model</module>
+		<module>hu.prolan.promod.model.edit</module>
+		<module>hu.prolan.promod.model.editor</module>
+		<module>hu.prolan.promod.model.ui</module>
+		<module>hu.prolan.promod.queries</module>
+		<module>hu.prolan.promod.queries.validation</module>
+		<module>hu.prolan.promod.transform</module>
+		<module>hu.prolan.promod.wsinfodsl</module>
+		<module>hu.prolan.promod.application</module>
+	</modules>
+</project>
