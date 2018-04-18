@@ -59,21 +59,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>hu.prolan.javautil</groupId>
-			<artifactId>hu.prolan.javautil.docxwriter</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>hu.prolan.javautil</groupId>
-			<artifactId>hu.prolan.javautil.thirdparty.poi-ooxml</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>hu.prolan.javautil</groupId>
-			<artifactId>hu.prolan.javautil.base</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
+		
 		<!--dependency> <groupId>p2.eclipse-plugin</groupId> <artifactId>org.eclipse.viatra.query.runtime.rete</artifactId> 
 			<version>1.7.2.201803211255</version> </dependency -->
 
