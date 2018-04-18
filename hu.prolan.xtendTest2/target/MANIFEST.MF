@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: hu.prolan.xtendTest2
 Bundle-Name: XtendTest2
-Bundle-Version: 1.0.0.201804131425
-Require-Bundle: hu.prolan.xtendTest1;bundle-version="1.0.0",org.eclips
+Bundle-Version: 1.1.0.201804181142
+Require-Bundle: hu.prolan.xtendTest1;bundle-version="1.1.0",org.eclips
  e.xtext,org.eclipse.xtext.xbase,org.eclipse.equinox.common;bundle-ver
  sion="3.5.0",org.eclipse.emf.ecore,org.eclipse.xtext.xbase.lib,org.an
  tlr.runtime,org.eclipse.xtext.util,org.eclipse.xtend.lib,org.eclipse.

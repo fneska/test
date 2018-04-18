@@ -1,8 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan.promod</groupId>
 	<artifactId>hu.prolan.promod.root</artifactId>
-	<version>1.4.0-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -13,6 +14,13 @@
 		<viatra-repo.url>http://download.eclipse.org/viatra/updates/release/1.7.2
 		</viatra-repo.url>
 	</properties>
+
+	<scm>
+		<connection>scm:git:https://github.com/fneska/test.git</connection>
+		<developerConnection>scm:git:https://github.com/fneska/test.git</developerConnection>
+
+		<tag>HEAD</tag>
+	</scm>
 
 	<repositories>
 		<repository>
@@ -27,7 +35,17 @@
 		</repository>
 	</repositories>
 
+	<distributionManagement>
+		<repository>
+			<id>internal.repo</id>
+			<name>Internal repo</name>
+			<url> file://C:/users/fekete.agnes/my_github/test/test</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
+
 	<dependencies>
+		
 		<dependency>
 			<groupId>hu.prolan.javautil</groupId>
 			<artifactId>hu.prolan.javautil.docxwriter</artifactId>
@@ -144,14 +162,43 @@
 				</executions>
 			</plugin>
 
-			
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-versions-plugin</artifactId>
 				<version>1.1.0</version>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho-version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
+					<completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho-version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
+						
+							
+					<releaseVersion>1.0</releaseVersion>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<updateDependencies>true</updateDependencies>
+					<urlConnection>scm:git:https://github.com/fneska/test.git</urlConnection>
+					<tagBase>
+						scm:git:https://github.com/fneska/test.git
+					</tagBase>
 
+					<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+					<tagNameFormat>${timestamp}-v@{project.version}</tagNameFormat>
+					
+					<username>fneska</username>
+					<password>jamiNa73</password>
+
+			
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>

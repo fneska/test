@@ -35,7 +35,7 @@
 		<link>
 			<name>pom_parent.xml</name>
 			<type>1</type>
-			<locationURI>WORKSPACE_LOC/pom.xml</locationURI>
+			<location>C:/Users/fekete.agnes/my_github/test/test/pom.xml</location>
 		</link>
 	</linkedResources>
 </projectDescription>
