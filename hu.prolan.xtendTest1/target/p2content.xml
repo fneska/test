@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='hu.prolan.xtendTest1' version='1.1.0.201804191505' singleton='false'>
-    <update id='hu.prolan.xtendTest1' range='[0.0.0,1.1.0.201804191505)' severity='0'/>
+  <unit id='hu.prolan.xtendTest1' version='1.1.0.201804201127' singleton='false'>
+    <update id='hu.prolan.xtendTest1' range='[0.0.0,1.1.0.201804201127)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='XtendTest1'/>
       <property name='maven-groupId' value='hu.prolan.promod'/>
@@ -9,8 +9,8 @@
       <property name='maven-version' value='1.1.0-SNAPSHOT'/>
     </properties>
     <provides size='4'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='hu.prolan.xtendTest1' version='1.1.0.201804191505'/>
-      <provided namespace='osgi.bundle' name='hu.prolan.xtendTest1' version='1.1.0.201804191505'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='hu.prolan.xtendTest1' version='1.1.0.201804201127'/>
+      <provided namespace='osgi.bundle' name='hu.prolan.xtendTest1' version='1.1.0.201804201127'/>
       <provided namespace='java.package' name='hu.prolan.xtendTest1' version='0.0.0'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
@@ -30,13 +30,13 @@
       <required namespace='osgi.bundle' name='org.eclipse.emf.codegen.ecore.xtext' range='1.2.0'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.1.0.201804191505'/>
+      <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.1.0.201804201127'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: hu.prolan.xtendTest1&#xA;Bundle-Version: 1.1.0.201804191505&#xA;
+          Bundle-SymbolicName: hu.prolan.xtendTest1&#xA;Bundle-Version: 1.1.0.201804201127&#xA;
         </instruction>
       </instructions>
     </touchpointData>
