@@ -18,7 +18,7 @@
 		<connection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</connection>
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
 
-		<tag>hu.prolan.promod.root-1.2.0</tag>
+		<tag>1.2.0</tag>
 	</scm>
 
 	<repositories>
@@ -161,25 +161,41 @@
 			</plugin>
 
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
+					<completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<goals>
+							<goal>add</goal>
+							<goal>checkin</goal>
+						</goals>
+						<configuration>
+							<includes>**/META-INF/MANIFEST.MF, **/feature.xml,
+								**/*.product,**/category.xml</includes>
+							<excludes>**/target/**</excludes>
+							<message>Changing the Eclipse files versions</message>
+
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
-		
-		 <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>com.itemis.maven.plugins</groupId>
-          <artifactId>unleash-maven-plugin</artifactId>
-          <version>1.0.0</version>
-          <dependencies>
-            <dependency>
-              <groupId>com.itemis.maven.plugins</groupId>
-              <artifactId>unleash-scm-provider-git</artifactId>
-              <version>1.0.0</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-      </plugins>
-    </pluginManagement>
 	</build>
 
 
