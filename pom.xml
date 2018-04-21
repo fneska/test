@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan.promod</groupId>
 	<artifactId>hu.prolan.promod.root</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -58,7 +58,13 @@
 			<version>1.1.0</version>
 		</dependency>
 
-
+		<dependency>
+		
+           		<groupId>org.eclipse.tycho</groupId>  
+  				<artifactId>tycho-versions-plugin</artifactId>  
+ 				 <version>${tycho.version}</version>  
+			
+		</dependency>
 		
 		<!--dependency> <groupId>p2.eclipse-plugin</groupId> <artifactId>org.eclipse.viatra.query.runtime.rete</artifactId> 
 			<version>1.7.2.201803211255</version> </dependency -->
