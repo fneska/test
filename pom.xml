@@ -19,6 +19,7 @@
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
 
 	 
+    <tag>hu.prolan.promod.root-1.0.0</tag>
   </scm>
 
 	<repositories>
@@ -165,6 +166,7 @@
                    <completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho-version}:update-eclipse-metadata org.apache.maven.plugins:maven-scm-plugin:1.9.5:add org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
                </configuration>
            </plugin>
+           
            <plugin>
                <groupId>org.apache.maven.plugins</groupId>
                <artifactId>maven-scm-plugin</artifactId>
@@ -183,6 +185,12 @@
                    </execution>
                </executions>
            </plugin>
+           
+           <plugin>
+           		<groupId>org.eclipse.tycho</groupId>  
+  				<artifactId>tycho-versions-plugin</artifactId>  
+ 				 <version>${tycho.version}</version>  
+			</plugin> 
 
 		</plugins>
 		
