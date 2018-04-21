@@ -18,7 +18,8 @@
 		<connection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</connection>
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
 
-	</scm>
+	 
+  </scm>
 
 	<repositories>
 		<repository>
@@ -66,11 +67,7 @@
 			<artifactId>org.eclipse.xtend.lib</artifactId>
 			<version>2.13.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.tycho</groupId>
-			<artifactId>tycho-versions-plugin</artifactId>
-			<version>1.1.0</version>
-		</dependency>
+	
 	</dependencies>
 
 	<build>
