@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan.promod</groupId>
 	<artifactId>hu.prolan.promod.root</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -173,24 +173,6 @@
                </configuration>
            </plugin>
            
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-scm-plugin</artifactId>
-               <executions>
-                   <execution>
-                       <id>default-cli</id>
-                       <goals>
-                           <goal>add</goal>
-                           <goal>checkin</goal>
-                       </goals>
-                       <configuration>
-                           <includes>**/META-INF/MANIFEST.MF, **/feature.xml, **/*.product,**/category.xml</includes>
-                           <excludes>**/target/**</excludes>
-                           <message>Changing the Eclipse files versions</message>
-                       </configuration>
-                   </execution>
-               </executions>
-           </plugin>
            
            <plugin>
            		<groupId>org.eclipse.tycho</groupId>  
