@@ -178,7 +178,7 @@
                <artifactId>maven-scm-plugin</artifactId>
                <executions>
                    <execution>
-                       <id>default-cli</id>
+                  
                        <goals>
                            <goal>add</goal>
                            <goal>checkin</goal>
