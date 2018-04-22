@@ -16,8 +16,11 @@ public class TestClass {
     List<String> _xblockexpression = null;
     {
       final ArrayList<String> list = new ArrayList<String>();
-      final Function1<String, String> _function = (String s) -> {
-        return (s + "1");
+      final Function1<String, String> _function = new Function1<String, String>() {
+        @Override
+        public String apply(final String s) {
+          return (s + "1");
+        }
       };
       _xblockexpression = ListExtensions.<String, String>map(list, _function);
     }

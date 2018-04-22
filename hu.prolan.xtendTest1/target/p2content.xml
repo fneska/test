@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='1'>
-  <unit id='hu.prolan.xtendTest1' version='1.0.0.201804220909' singleton='false'>
-    <update id='hu.prolan.xtendTest1' range='[0.0.0,1.0.0.201804220909)' severity='0'/>
+  <unit id='hu.prolan.xtendTest1' version='1.2.0' singleton='false'>
+    <update id='hu.prolan.xtendTest1' range='[0.0.0,1.2.0)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='XtendTest1'/>
       <property name='maven-groupId' value='hu.prolan.promod'/>
       <property name='maven-artifactId' value='hu.prolan.xtendTest1'/>
-      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-version' value='1.2.0'/>
     </properties>
     <provides size='4'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='hu.prolan.xtendTest1' version='1.0.0.201804220909'/>
-      <provided namespace='osgi.bundle' name='hu.prolan.xtendTest1' version='1.0.0.201804220909'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='hu.prolan.xtendTest1' version='1.2.0'/>
+      <provided namespace='osgi.bundle' name='hu.prolan.xtendTest1' version='1.2.0'/>
       <provided namespace='java.package' name='hu.prolan.xtendTest1' version='0.0.0'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
@@ -30,13 +30,13 @@
       <required namespace='osgi.bundle' name='org.eclipse.emf.codegen.ecore.xtext' range='1.2.0'/>
     </requires>
     <artifacts size='1'>
-      <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.0.0.201804220909'/>
+      <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.2.0'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>
       <instructions size='1'>
         <instruction key='manifest'>
-          Bundle-SymbolicName: hu.prolan.xtendTest1&#xA;Bundle-Version: 1.0.0.201804220909&#xA;
+          Bundle-SymbolicName: hu.prolan.xtendTest1&#xA;Bundle-Version: 1.2.0&#xA;
         </instruction>
       </instructions>
     </touchpointData>
