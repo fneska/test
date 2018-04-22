@@ -18,7 +18,7 @@
 		<connection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</connection>
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
 	 <url>scm:git:file://C:/users/fekete.agnes/my_github/test/test</url>
-    <tag>hu.prolan.promod.root-1.0.0</tag>
+    
   </scm>
 
 	<repositories>
@@ -184,6 +184,7 @@
                            <goal>checkin</goal>
                        </goals>
                        <configuration>
+                       <connectionType>developerConnection</connectionType>
                            <includes>**/META-INF/MANIFEST.MF, **/feature.xml, **/*.product,**/category.xml</includes>
                            <excludes>**/target/**</excludes>
                            <message>Changing the Eclipse files versions</message>
