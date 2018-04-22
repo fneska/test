@@ -17,7 +17,7 @@
 	<scm>
 		<connection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</connection>
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
-<url>scm:git:file://C:/users/fekete.agnes/my_github/test/test</url>
+
 	 
    
     <tag>hu.prolan.promod.root-1.0.0</tag>
