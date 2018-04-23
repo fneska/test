@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan.promod</groupId>
 	<artifactId>hu.prolan.promod.root</artifactId>
@@ -18,9 +20,9 @@
 		<connection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</connection>
 		<developerConnection>scm:git:file://C:/users/fekete.agnes/my_github/test/test</developerConnection>
 
-    
-    <tag>hu.prolan.promod.root-1.0.0</tag>
-  </scm>
+
+		<tag>hu.prolan.promod.root-1.0.0</tag>
+	</scm>
 
 	<repositories>
 		<repository>
@@ -57,7 +59,7 @@
 			<artifactId>tycho-versions-plugin</artifactId>
 			<version>1.1.0</version>
 		</dependency>
-		
+
 		<!--dependency> <groupId>p2.eclipse-plugin</groupId> <artifactId>org.eclipse.viatra.query.runtime.rete</artifactId> 
 			<version>1.7.2.201803211255</version> </dependency -->
 
@@ -66,7 +68,7 @@
 			<artifactId>org.eclipse.xtend.lib</artifactId>
 			<version>2.13.0</version>
 		</dependency>
-	
+
 	</dependencies>
 
 	<build>
@@ -155,54 +157,65 @@
 				</executions>
 			</plugin>
 
-			
-           
-           <plugin>
-           		<groupId>org.eclipse.tycho</groupId>  
-  				<artifactId>tycho-versions-plugin</artifactId>  
- 				 <version>${tycho.version}</version>  
-			</plugin> 
 
-		
-		
-    <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-release-plugin</artifactId>
-               <version>2.5.3</version>
-               <configuration>
-                   <preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata org.apache.maven.plugins:maven-scm-plugin:1.9.5:add -DpushChanges=false org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
-                   <completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata org.apache.maven.plugins:maven-scm-plugin:1.9.5:add -DpushChanges=false org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
-               </configuration>
-           </plugin>
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-scm-plugin</artifactId>
-               <executions>
-                   <execution>
-                   <id>default-cli</id>
-                       <goals>
-                           <goal>add</goal>
-                           <goal>checkin</goal>
-                       </goals>
-                       <configuration>
-                       <connectionType>developerConnection</connectionType>
-                           <includes>**/META-INF/MANIFEST.MF, **/feature.xml, **/*.product,**/category.xml</includes>
-                           <excludes>**/target/**</excludes>
-                           <message>Changing the Eclipse files versions</message>
-                       </configuration>
-                   </execution>
-               </executions>
-               <dependencies>
-						<dependency>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-compiler-plugin</artifactId>
-							<version>3.7.0</version>
-						</dependency>
-					</dependencies>
-           </plugin>
-       </plugins>
-  </build>
-		<modules>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						-DpushChanges=false
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
+					<completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
+						-DpushChanges=false
+						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>default-cli</id>
+						<goals>
+							<goal>add</goal>
+							<goal>checkin</goal>
+						</goals>
+						<configuration>
+							<connectionType>developerConnection</connectionType>
+							<includes>**/META-INF/MANIFEST.MF, **/feature.xml,
+								**/*.product,**/category.xml</includes>
+							<excludes>**/target/**</excludes>
+							<message>Changing the Eclipse files versions</message>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.7.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
 
 		<module>hu.prolan.xtendTest1</module>
 		<module>hu.prolan.xtendTest2</module>
