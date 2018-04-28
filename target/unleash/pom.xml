@@ -12,7 +12,7 @@
 		</eclipse-repo.url>
 		<viatra-repo.url>http://download.eclipse.org/viatra/updates/release/1.7.2
 		</viatra-repo.url>
-		<unleash-maven-version>2.7.4</unleash-maven-version>
+		<unleash-maven-version>2.8.0</unleash-maven-version>
 		<unleash-scm-provider-git>2.1.0</unleash-scm-provider-git>
 	</properties>
 
@@ -222,11 +222,7 @@
 							<artifactId>unleash-scm-provider-git</artifactId>
 							<version>${unleash-scm-provider-git}</version>
 						</dependency>
-						<dependency>
-              <groupId>com.itemis.maven.plugins</groupId>
-              <artifactId>cdi-plugin-hooks</artifactId>
-              <version>0.1.1</version>
-            </dependency>
+			
 					</dependencies>
 				</plugin>
 			</plugins>
