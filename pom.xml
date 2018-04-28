@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan.promod</groupId>
 	<artifactId>hu.prolan.promod.root</artifactId>
@@ -21,7 +20,7 @@
 		<url>https://github.com/fneska/test</url>
 		<connection>scm:git:https://github.com/fneska/test</connection>
 		<developerConnection>scm:git:https://github.com/fneska/test</developerConnection>
-
+<tag>HEAD</tag>
     
   </scm>
 
@@ -223,6 +222,11 @@
 							<artifactId>unleash-scm-provider-git</artifactId>
 							<version>${unleash-scm-provider-git}</version>
 						</dependency>
+						<dependency>
+              <groupId>com.itemis.maven.plugins</groupId>
+              <artifactId>cdi-plugin-hooks</artifactId>
+              <version>0.1.1</version>
+            </dependency>
 					</dependencies>
 				</plugin>
 			</plugins>
