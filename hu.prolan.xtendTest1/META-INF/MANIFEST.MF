@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: XtendTest1
 Bundle-SymbolicName: hu.prolan.xtendTest1
-Bundle-Version: 1.1.0.queries
+Bundle-Version: 1.2.10
 Export-Package: hu.prolan.xtendTest1
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
