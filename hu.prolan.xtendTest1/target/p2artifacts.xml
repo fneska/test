@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.1.0.queries'>
+  <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.1.0.201805012053'>
     <properties size='5'>
-      <property name='artifact.size' value='5151'/>
-      <property name='download.size' value='5151'/>
+      <property name='artifact.size' value='5153'/>
+      <property name='download.size' value='5153'/>
       <property name='maven-groupId' value='hu.prolan'/>
       <property name='maven-artifactId' value='hu.prolan.xtendTest1'/>
-      <property name='maven-version' value='1.1.0.queries'/>
+      <property name='maven-version' value='1.1.0-SNAPSHOT'/>
     </properties>
   </artifact>
 </artifacts>
