@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan</groupId>
 	<artifactId>hu.prolan.root</artifactId>
-	<version>1.2.6</version>
+	<version>1.1.0-SNAPSHO</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -21,7 +21,7 @@
 		<developerConnection>scm:git:https://github.com/fneska/test</developerConnection>
 
     
-    <tag>hu.prolan.root-1.2.6</tag>
+   
   </scm>
 
 	<repositories>
