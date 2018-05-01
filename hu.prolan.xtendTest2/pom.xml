@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan</groupId>
 	<artifactId>hu.prolan.xtendTest2</artifactId>
-	<version>1.3.4-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>eclipse-plugin</packaging>
 	<parent>
 		<artifactId>hu.prolan.root</artifactId>
 		<groupId>hu.prolan</groupId>
-		<version>1.3.4-SNAPSHOT</version>
+		<version>1.1.0-SNAPSHOT</version>
 	</parent>
 </project>
