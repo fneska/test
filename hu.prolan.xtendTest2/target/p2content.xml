@@ -4,7 +4,7 @@
     <update id='hu.prolan.xtendTest2' range='[0.0.0,1.1.0)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='XtendTest2'/>
-      <property name='maven-groupId' value='hu.prolan.promod'/>
+      <property name='maven-groupId' value='hu.prolan'/>
       <property name='maven-artifactId' value='hu.prolan.xtendTest2'/>
       <property name='maven-version' value='1.1.0'/>
     </properties>
@@ -14,7 +14,6 @@
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
     </provides>
     <requires size='14'>
-      <required namespace='osgi.bundle' name='hu.prolan.xtendTest1' range='1.1.0'/>
       <required namespace='osgi.bundle' name='org.eclipse.xtext' range='0.0.0'/>
       <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase' range='0.0.0'/>
       <required namespace='osgi.bundle' name='org.eclipse.equinox.common' range='3.5.0'/>
@@ -28,6 +27,7 @@
       <required namespace='osgi.bundle' name='org.objectweb.asm' range='[5.0.1,6.0.0)' optional='true' greedy='false'/>
       <required namespace='osgi.bundle' name='org.eclipse.xtext.ecore' range='2.10.0'/>
       <required namespace='osgi.bundle' name='org.eclipse.emf.codegen.ecore.xtext' range='1.2.0'/>
+      <required namespace='osgi.bundle' name='hu.prolan.xtendTest1' range='1.1.0'/>
     </requires>
     <artifacts size='1'>
       <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest2' version='1.1.0'/>

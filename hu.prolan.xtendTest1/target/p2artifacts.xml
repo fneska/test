@@ -3,9 +3,9 @@
 <artifacts size='1'>
   <artifact classifier='osgi.bundle' id='hu.prolan.xtendTest1' version='1.1.0'>
     <properties size='5'>
-      <property name='artifact.size' value='5313'/>
-      <property name='download.size' value='5313'/>
-      <property name='maven-groupId' value='hu.prolan.promod'/>
+      <property name='artifact.size' value='5249'/>
+      <property name='download.size' value='5249'/>
+      <property name='maven-groupId' value='hu.prolan'/>
       <property name='maven-artifactId' value='hu.prolan.xtendTest1'/>
       <property name='maven-version' value='1.1.0'/>
     </properties>

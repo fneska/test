@@ -1,1 +1,4 @@
-call mvn release:prepare -DallowTimestampedSnapshots=true -DautoVersionSubmodules=true -DpushChanges=false -DupdateDependencies=true -DtagBase=scm:git:file://C:/users/fekete.agnes/my_github/test/test -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.0.1-SNAPSHOT
+call mvn unleash:perform-tycho -Dworkflow=unleash-workflow -Dunleash.scmUsername=fneska -Dunleash.scmPassword=jamiNa73 -Dunleash.preserveFixedModuleVersions=true
+
+
+-DtagBase=scm:git:file://C:/users/fekete.agnes/my_github/test/test -DreleaseVersion=1.3.0 -DdevelopmentVersion=1.3.1-SNAPSHOT

@@ -4,7 +4,7 @@
     <update id='hu.prolan.xtendTest1' range='[0.0.0,1.1.0)' severity='0'/>
     <properties size='4'>
       <property name='org.eclipse.equinox.p2.name' value='XtendTest1'/>
-      <property name='maven-groupId' value='hu.prolan.promod'/>
+      <property name='maven-groupId' value='hu.prolan'/>
       <property name='maven-artifactId' value='hu.prolan.xtendTest1'/>
       <property name='maven-version' value='1.1.0'/>
     </properties>
