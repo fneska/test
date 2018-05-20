@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.prolan</groupId>
 	<artifactId>hu.prolan.root</artifactId>
@@ -168,72 +167,72 @@
 			</plugin>
 
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
-						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
-						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals>
-					<completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata
-						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add
-						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.shared</groupId>
-						<artifactId>maven-invoker</artifactId>
-						<version>2.2</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-scm-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>default-cli</id>
-						<goals>
-							<goal>add</goal>
-							<goal>checkin</goal>
-						</goals>
-						<configuration>
-							<connectionType>developerConnection</connectionType>
-							<includes>**/META-INF/MANIFEST.MF, **/feature.xml,
-								**/*.product,**/category.xml</includes>
-							<excludes>**/target/**</excludes>
-							<message>Changing the Eclipse files versions</message>
-						</configuration>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.7.0</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-		<!-- <pluginManagement> -->
-		<!-- <plugins> -->
-		<!-- Unleash plugin for automated releases -->
-		<!-- <plugin> -->
-		<!-- <groupId>com.itemis.maven.plugins</groupId> -->
-		<!-- <artifactId>unleash-maven-plugin</artifactId> -->
-		<!-- <version>${unleash-maven-version}</version> -->
-		<!-- <dependencies> -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.itemis.maven.plugins</groupId> -->
-		<!-- <artifactId>unleash-scm-provider-git</artifactId> -->
-		<!-- <version>${unleash-scm-provider-git}</version> -->
-		<!-- </dependency> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-release-plugin</artifactId> -->
+<!-- 				<version>2.5.3</version> -->
+<!-- 				<configuration> -->
+<!-- 					<preparationGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata -->
+<!-- 						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add -->
+<!-- 						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</preparationGoals> -->
+<!-- 					<completionGoals>org.eclipse.tycho:tycho-versions-plugin:${tycho.version}:update-eclipse-metadata -->
+<!-- 						org.apache.maven.plugins:maven-scm-plugin:1.9.5:add -->
+<!-- 						org.apache.maven.plugins:maven-scm-plugin:1.9.5:checkin</completionGoals> -->
+<!-- 				</configuration> -->
+<!-- 				<dependencies> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>org.apache.maven.shared</groupId> -->
+<!-- 						<artifactId>maven-invoker</artifactId> -->
+<!-- 						<version>2.2</version> -->
+<!-- 					</dependency> -->
+<!-- 				</dependencies> -->
+<!-- 			</plugin> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-scm-plugin</artifactId> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>default-cli</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>add</goal> -->
+<!-- 							<goal>checkin</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 							<connectionType>developerConnection</connectionType> -->
+<!-- 							<includes>**/META-INF/MANIFEST.MF, **/feature.xml, -->
+<!-- 								**/*.product,**/category.xml</includes> -->
+<!-- 							<excludes>**/target/**</excludes> -->
+<!-- 							<message>Changing the Eclipse files versions</message> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 				<dependencies> -->
+<!-- 					<dependency> -->
+<!-- 						<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 						<artifactId>maven-compiler-plugin</artifactId> -->
+<!-- 						<version>3.7.0</version> -->
+<!-- 					</dependency> -->
+<!-- 				</dependencies> -->
+<!-- 			</plugin> -->
+</plugins> 
+		<pluginManagement>
+		<plugins>
+	
+		<plugin>
+		<groupId>com.itemis.maven.plugins</groupId>
+		<artifactId>unleash-maven-plugin</artifactId>
+		<version>2.8.0</version>
+		<dependencies>
+		<dependency>
+		<groupId>com.itemis.maven.plugins</groupId>
+		<artifactId>unleash-scm-provider-git</artifactId>
+		<version>2.1.0</version>
+		</dependency>
 
-		<!-- </dependencies> -->
-		<!-- </plugin> -->
-		<!-- </plugins> -->
-		<!-- </pluginManagement> -->
+		</dependencies>
+		</plugin>
+		</plugins>
+		</pluginManagement>
 	</build>
 	<modules>
 
